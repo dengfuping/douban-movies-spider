@@ -94,8 +94,8 @@
       "totalBytes": 8000000
     }
   ],
-  "description": "A comprehensive dataset of Chinese movie reviews and information from Douban, one of China's largest movie review platforms. Contains detailed metadata including ratings, cast, directors, plot summaries, genres, and more for over 5,000 movies.\n\n**Source Repository**: https://github.com/dengfuping/douban-movie-spider\n\nFor more details about data collection methods, code, and updates, please visit the GitHub repository.",
-  "githubUrl": "https://github.com/dengfuping/douban-movie-spider",
+  "description": "A comprehensive dataset of Chinese movie reviews and information from Douban, one of China's largest movie review platforms. Contains detailed metadata including ratings, cast, directors, plot summaries, genres, and more for over 5,000 movies.\n\n**Source Repository**: https://github.com/dengfuping/douban-movies-spider\n\nFor more details about data collection methods, code, and updates, please visit the GitHub repository.",
+  "githubUrl": "https://github.com/dengfuping/douban-movies-spider",
   "resources": [
     {
       "path": "douban_all_movies.csv",

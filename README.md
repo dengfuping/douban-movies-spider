@@ -2,7 +2,7 @@
 
 一个功能完善的豆瓣电影数据爬虫工具，支持爬取多种类型的电影数据，并自动获取详细信息（海报、导演、演员、简介等）。
 
-**GitHub**: https://github.com/dengfuping/douban-movie-spider  
+**GitHub**: https://github.com/dengfuping/douban-movies-spider  
 **Kaggle Dataset**: https://www.kaggle.com/datasets/dengfuping/douban-movies-dataset
 
 ## 功能特性
