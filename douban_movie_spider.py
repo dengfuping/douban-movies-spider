@@ -995,9 +995,9 @@ class DoubanMovieSpider:
             return None
     
     def crawl_top250(self, max_pages: int = 10, fetch_detail: bool = True, 
-                     save_immediately: bool = True, json_filename: str = 'data/douban_top250.json',
-                     jsonl_filename: str = 'data/douban_top250.jsonl',
-                     csv_filename: str = 'data/douban_top250.csv',
+                     save_immediately: bool = True, json_filename: str = 'data/douban_top250_movies.json',
+                     jsonl_filename: str = 'data/douban_top250_movies.jsonl',
+                     csv_filename: str = 'data/douban_top250_movies.csv',
                      existing_movies: set = None) -> List[Dict]:
         """
         爬取豆瓣电影Top250
@@ -1850,17 +1850,17 @@ def main():
             max_pages=10,
             save_immediately=True,
             existing_movies=existing_movies,
-            jsonl_filename='data/douban_top250.jsonl',
-            csv_filename='data/douban_top250.csv'
+            jsonl_filename='data/douban_top250_movies.jsonl',
+            csv_filename='data/douban_top250_movies.csv'
         )
         if top250_movies:
             # 同时保存完整的JSON文件（用于最终结果）
-            spider.save_to_json(top250_movies, 'data/douban_top250.json')
+            spider.save_to_json(top250_movies, 'data/douban_top250_movies.json')
             print(f"\n✅ Top250爬取完成，共获取 {len(top250_movies)} 部电影")
             print(f"   文件已保存：")
-            print(f"   - data/douban_top250.json (完整JSON)")
-            print(f"   - data/douban_top250.jsonl (逐行JSON，已实时保存)")
-            print(f"   - data/douban_top250.csv (CSV格式，已实时保存)")
+            print(f"   - data/douban_top250_movies.json (完整JSON)")
+            print(f"   - data/douban_top250_movies.jsonl (逐行JSON，已实时保存)")
+            print(f"   - data/douban_top250_movies.csv (CSV格式，已实时保存)")
     
     if choice == "2" or choice == "7":
         print("\n开始爬取高分电影...")

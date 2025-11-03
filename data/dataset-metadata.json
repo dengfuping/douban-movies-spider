@@ -1,0 +1,130 @@
+{
+  "title": "Douban Movies Dataset",
+  "id": "dengfuping/douban-movies-dataset",
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ],
+  "keywords": [
+    "movies",
+    "douban",
+    "chinese",
+    "ratings",
+    "reviews",
+    "entertainment",
+    "film",
+    "cinema",
+    "recommendation",
+    "nlp"
+  ],
+  "collaborators": [],
+  "data": [
+    {
+      "description": "Complete collection of all movies from Douban (deduplicated, comprehensive dataset)",
+      "name": "douban_all_movies",
+      "totalBytes": 15000000,
+      "columns": [
+        {"name": "movie_id", "type": "integer", "description": "Unique Douban movie ID"},
+        {"name": "title", "type": "string", "description": "Movie title"},
+        {"name": "rating", "type": "float", "description": "Average rating (0-10)"},
+        {"name": "total_ratings", "type": "integer", "description": "Total number of ratings"},
+        {"name": "directors", "type": "string", "description": "Director name"},
+        {"name": "actors", "type": "string", "description": "Main actors (up to 5)"},
+        {"name": "screenwriters", "type": "string", "description": "Screenwriter name"},
+        {"name": "release_date", "type": "string", "description": "Release date"},
+        {"name": "genres", "type": "string", "description": "Movie genres"},
+        {"name": "countries", "type": "string", "description": "Production countries"},
+        {"name": "languages", "type": "string", "description": "Languages used"},
+        {"name": "runtime", "type": "string", "description": "Movie runtime"},
+        {"name": "summary", "type": "string", "description": "Plot summary"},
+        {"name": "tags", "type": "string", "description": "User tags"},
+        {"name": "imdb", "type": "string", "description": "IMDb link"},
+        {"name": "link", "type": "string", "description": "Douban movie URL"},
+        {"name": "poster", "type": "string", "description": "Poster image URL"}
+      ]
+    },
+    {
+      "description": "Top 250 movies on Douban",
+      "name": "douban_top250_movies",
+      "totalBytes": 5000000,
+      "columns": [
+        {"name": "movie_id", "type": "integer", "description": "Unique Douban movie ID"},
+        {"name": "title", "type": "string", "description": "Movie title"},
+        {"name": "rating", "type": "float", "description": "Average rating (0-10)"},
+        {"name": "total_ratings", "type": "integer", "description": "Total number of ratings"},
+        {"name": "directors", "type": "string", "description": "Director name"},
+        {"name": "actors", "type": "string", "description": "Main actors (up to 5)"},
+        {"name": "screenwriters", "type": "string", "description": "Screenwriter name"},
+        {"name": "release_date", "type": "string", "description": "Release date"},
+        {"name": "genres", "type": "string", "description": "Movie genres"},
+        {"name": "countries", "type": "string", "description": "Production countries"},
+        {"name": "languages", "type": "string", "description": "Languages used"},
+        {"name": "runtime", "type": "string", "description": "Movie runtime"},
+        {"name": "summary", "type": "string", "description": "Plot summary"},
+        {"name": "tags", "type": "string", "description": "User tags"},
+        {"name": "imdb", "type": "string", "description": "IMDb link"},
+        {"name": "link", "type": "string", "description": "Douban movie URL"},
+        {"name": "poster", "type": "string", "description": "Poster image URL"}
+      ]
+    },
+    {
+      "description": "High rating movies from Douban",
+      "name": "douban_high_rating",
+      "totalBytes": 8000000
+    },
+    {
+      "description": "Chinese language movies",
+      "name": "douban_chinese_movies",
+      "totalBytes": 8000000
+    },
+    {
+      "description": "Western movies",
+      "name": "douban_western_movies",
+      "totalBytes": 8000000
+    },
+    {
+      "description": "Japanese movies",
+      "name": "douban_japanese_movies",
+      "totalBytes": 8000000
+    },
+    {
+      "description": "Hong Kong movies",
+      "name": "douban_hongkong_movies",
+      "totalBytes": 8000000
+    }
+  ],
+  "description": "A comprehensive dataset of Chinese movie reviews and information from Douban, one of China's largest movie review platforms. Contains detailed metadata including ratings, cast, directors, plot summaries, genres, and more for over 5,000 movies.\n\n**Source Repository**: https://github.com/dengfuping/douban-movie-spider\n\nFor more details about data collection methods, code, and updates, please visit the GitHub repository.",
+  "githubUrl": "https://github.com/dengfuping/douban-movie-spider",
+  "resources": [
+    {
+      "path": "douban_all_movies.csv",
+      "description": "All movies collection in CSV format"
+    },
+    {
+      "path": "douban_top250_movies.csv",
+      "description": "Top 250 movies in CSV format"
+    },
+    {
+      "path": "douban_high_rating.csv",
+      "description": "High rating movies in CSV format"
+    },
+    {
+      "path": "douban_chinese_movies.csv",
+      "description": "Chinese movies in CSV format"
+    },
+    {
+      "path": "douban_western_movies.csv",
+      "description": "Western movies in CSV format"
+    },
+    {
+      "path": "douban_japanese_movies.csv",
+      "description": "Japanese movies in CSV format"
+    },
+    {
+      "path": "douban_hongkong_movies.csv",
+      "description": "Hong Kong movies in CSV format"
+    }
+  ]
+}
+

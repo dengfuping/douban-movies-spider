@@ -2,6 +2,9 @@
 
 一个功能完善的豆瓣电影数据爬虫工具，支持爬取多种类型的电影数据，并自动获取详细信息（海报、导演、演员、简介等）。
 
+**GitHub**: https://github.com/dengfuping/douban-movie-spider  
+**Kaggle Dataset**: https://www.kaggle.com/datasets/dengfuping/douban-movies-dataset
+
 ## 功能特性
 
 - ✅ **多种数据源支持**
@@ -55,7 +58,7 @@ pip install -r requirements.txt
 直接运行脚本，按提示选择爬取类型：
 
 ```bash
-python3 douban_movie_spider.py
+python3 douban_movies_spider.py
 ```
 
 ### 爬取选项
@@ -112,17 +115,21 @@ python3 douban_movie_spider.py
 ## 项目结构
 
 ```
-hybrid-search-data/
-├── douban_movie_spider.py    # 主程序
-├── requirements.txt           # 依赖包列表
-├── README.md                 # 项目说明文档
-└── data/                     # 数据文件目录
-    ├── douban_top250.*       # Top250 数据
-    ├── douban_high_rating.*  # 高分电影数据
-    ├── douban_chinese_movies.*
-    ├── douban_western_movies.*
-    ├── douban_japanese_movies.*
-    └── douban_hongkong_movies.*
+douban_movies_spider/
+├── douban_movies_spider.py       # 主程序
+├── kaggle_upload.py            # Kaggle 上传工具
+├── requirements.txt             # 依赖包列表
+├── README.md                    # 项目说明文档
+└── data/                        # 数据文件目录
+    ├── dataset-metadata.json    # Kaggle 数据集元数据
+    ├── DATASET.md               # 数据集说明文档
+    ├── douban_all_movies.*      # 所有电影（去重后）
+    ├── douban_top250_movies.*   # Top250 数据
+    ├── douban_high_rating.*     # 高分电影数据
+    ├── douban_chinese_movies.*  # 华语电影数据
+    ├── douban_western_movies.*  # 欧美电影数据
+    ├── douban_japanese_movies.* # 日本电影数据
+    └── douban_hongkong_movies.* # 香港电影数据
 ```
 
 ## 注意事项
@@ -151,6 +158,58 @@ hybrid-search-data/
 5. **中断恢复**
    - JSONL 格式支持追加模式，可以部分恢复数据
    - 建议优先查看 JSONL 文件
+
+## 上传到 Kaggle
+
+项目包含 Kaggle 数据集上传工具，可以将数据上传到 Kaggle 平台。
+
+### 一键上传（推荐）
+
+**创建新数据集**（不带 `-m` 参数）：
+
+```bash
+python3 kaggle_upload.py
+```
+
+**更新现有数据集**（带 `-m` 参数）：
+
+```bash
+python3 kaggle_upload.py -m "更新数据集，新增 2024 年数据"
+```
+
+**注意**：
+
+- 不带 `-m` 参数：创建新数据集
+- 带 `-m` 参数：更新现有数据集（必须提供版本说明）
+
+一行命令即可完成：
+
+- ✅ 准备上传文件（CSV + 元数据）
+- ✅ 上传到 Kaggle（创建或更新）
+- ✅ 自动清理临时目录
+
+### 脚本功能
+
+脚本会自动：
+
+- ✅ 创建 `kaggle-upload/` 目录
+- ✅ 复制所有 CSV 文件
+- ✅ 复制 `dataset-metadata.json` 和 `DATASET.md`
+- ✅ 排除所有 JSON 和 JSONL 文件
+- ✅ 检查 Kaggle CLI 是否安装（默认行为）
+- ✅ 自动上传到 Kaggle（默认行为）
+- ✅ 自动清理临时目录（默认行为）
+
+### 注意事项
+
+- **Kaggle CLI 要求**：需要先安装并配置 Kaggle CLI
+  ```bash
+  pip3 install kaggle
+  # 配置 API token (参考: https://www.kaggle.com/docs/api)
+  ```
+- **`.kaggleignore` 不支持**：由于 Kaggle CLI 不支持 `.kaggleignore` 文件，脚本会自动创建独立的上传目录来确保只上传 CSV 文件。
+
+更多详细信息请参考项目中的数据集文档：`data/DATASET.md`
 
 ## 代码特点
 
